@@ -1,8 +1,26 @@
 
 D = read.csv("C:/Users/Reza/Google Drive/Manuscript 2/BFdPvalue.csv")
 
-source("C:/Users/Reza/Google Drive/Manuscript 2/BF.d.pvalue.Functions.R")
 
+BF.d.pvalue = Vectorize(function(t, n1, n2 = NA, scale = sqrt(2)/2, log.BF = FALSE){
+  
+    options(warn = -1)  
+      t = abs(t)
+      N = ifelse(is.na(n2), n1, (n1*n2)/(n1+n2))
+     df = ifelse(is.na(n2), n1 - 1, (n1 + n2) - 2)
+      d = t / sqrt(N)
+  
+     H1 = integrate(function(delta) dcauchy(delta, 0, scale) * dt(t, df, delta*sqrt(N)), -Inf, Inf)[[1]]
+     H0 = dt(t, df)
+   BF10 = ifelse(log.BF, log(H1/H0), H1/H0)
+p.value = 2*(1-pt(t, df))
+  
+  cbind(BF10 = BF10, p.value = p.value, d = d, H1 = H1, H0 = H0)
+  
+}, vectorize.args = c("t", "n1", "n2", "scale", "log.BF"))
+
+  
+  
 t.value = D$t.value ; n1 = D$n1 ; n2 = D$n2 ; t.type = D$t.type ; p.value = D$p.value ; Data.size = nrow(D)
 
 
