@@ -35,7 +35,7 @@ type.s.m = function(n1 = 20, n2 = NA, d = .1, obs.d = .6){
                   cex.axis = 1, cex.lab = 1, yaxs = "i", ty = "n")
   
      x = seq(min.d, CI[1], l = 1e4)   ;  y = dt(x/d.SE, df, ncp)/d.SE
-    xx =  seq(max.d, CI[2], l = 1e4)  ; yy = dt(xx/d.SE, df, ncp)/d.SE 
+    xx = seq(max.d, CI[2], l = 1e4)   ; yy = dt(xx/d.SE, df, ncp)/d.SE 
   
   polygon(c(min.d, x, CI[1]), c(y[1], y, rev(y[1])), col = 2, border = NA)  
   polygon(c(max.d, xx, CI[2]), c(yy[1], yy, rev(yy[1])), col = 2, border = NA) 
