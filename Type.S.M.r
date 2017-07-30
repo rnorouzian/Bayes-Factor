@@ -25,7 +25,7 @@ type.s.m = function(n1 = 20, n2 = NA, d = .1, obs.d = .6){
   
   points(obs.d, 0, pch = 23, bg = 3, cex = 1.4, xpd = TRUE)
   
-  legend("topright", "Observed Effect", pch = 23, pt.bg = 3, pt.cex = 1.2, bty = "n", text.font = 2)   
+  legend("topright", "Observed \nS.S. Effect", pch = 23, pt.bg = 3, pt.cex = 1.2, bty = "n", text.font = 2)   
   abline(v = 0, col = 2, xpd = FALSE) 
   
   par(mar = c(5, 4, 1, 2))
