@@ -50,7 +50,7 @@ type.s.m = function(n1 = 20, n2 = NA, d = .1, obs.d = .6){
   
   type.s.area = pt(CI[1]/d.SE, df, ncp)
         power = type.s.area + pt(CI[2]/d.SE, df, ncp, lower.tail = FALSE)
-       type.s = type.s / power
+       type.s = type.s.area / power
       p.value = 2*pt(abs(obs.d)/d.SE, df, lower.tail = FALSE)
      random.d = rt(n = 1e6, df, ncp)*d.SE
           sig = abs(random.d) > CI[2]
