@@ -46,7 +46,7 @@ type.s.m = function(n1 = 20, n2 = NA, d = .1, obs.d = .6){
   points(obs.d, 0, pch = 23, bg = 3, cex = 1.4, xpd = TRUE)
   abline(v = d, col = 4, xpd = FALSE)
   
-  segments(c(CI[1], CI[2]), 0, c(CI[1], CI[2]), 2, lty = 2, col = 2, xpd = NA)
+  segments(c(CI[1], CI[2]), 0, c(CI[1], CI[2]), 20, lty = 2, col = 2, xpd = NA)
   
   type.s.area = pt(CI[1]/d.SE, df, ncp)
         power = type.s.area + pt(CI[2]/d.SE, df, ncp, lower.tail = FALSE)
