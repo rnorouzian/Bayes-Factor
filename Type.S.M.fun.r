@@ -4,7 +4,7 @@
 
 type.s.mfun = function(n1, n2 = NA, d.min = 0, d.max = 1.4){
   
-  type.s.m = function(n1, n2 = NA, d){
+   type.s.m = function(n1, n2 = NA, d){
     
           N = ifelse(is.na(n2), n1, (n1 * n2)/(n1 + n2))
          df = ifelse(is.na(n2), n1 - 1, (n1 + n2) - 2)
