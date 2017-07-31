@@ -26,11 +26,11 @@ exaggration = if(d > 0) mean(abs(random.d)[sig])/ d else mean(-abs(random.d)[sig
   
   par(mfrow = c(2, 1), mgp = c(2, .5, 0), mar = c(4, 4, 3, 2), las = 1)  
   
-    d_range = seq(d.min, d.max, by = 1e-3)
-          n = length(d_range)
-      power = numeric(n)
-     type.s = numeric(n)
-exaggration = numeric(n)
+       d_range = seq(d.min, d.max, by = 1e-3)
+             n = length(d_range)
+         power = numeric(n)
+        type.s = numeric(n)
+   exaggration = numeric(n)
   
 for (i in 1:n){
              a = type.s.m2(d = d_range[i], n1 = n1, n2 = n2)
