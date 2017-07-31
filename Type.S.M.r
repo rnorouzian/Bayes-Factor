@@ -56,8 +56,8 @@ type.s.m = function(n1 = 20, n2 = NA, d = .1, obs.d = .6){
        type.s = type.s.area / power
       p.value = 2*pt(abs(obs.d)/d.SE, df, lower.tail = FALSE)
      random.d = rt(n = 1e6, df, ncp)*d.SE
-          sig = abs(random.d) > CI[2]
-  exaggration = mean(abs(random.d)[sig]) / d
+          sig = if(d > 0) abs(random.d) > CI[2] else -random.d < CI[1]
+  exaggration = if(d > 0) mean(abs(random.d)[sig]) / d else mean(-random.d[sig]) / d
   
   list(exaggration.ratio = exaggration, type.s = type.s, power = power, Crit.d = CI[2], p.value = p.value)
 }
