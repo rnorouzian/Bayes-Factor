@@ -51,7 +51,7 @@ type.s.m = function(n1 = 20, n2 = NA, d = .1, obs.d = .6){
   
   segments(c(CI[1], CI[2]), 0, c(CI[1], CI[2]), 20, lty = 2, col = 2, xpd = NA)
   
-  type.s.area = pt(CI[1]/d.SE, df, ncp)
+  type.s.area = pt(ifelse(d > 0, CI[1]/d.SE, CI[2]/d.SE), df, ncp, lower.tail = ifelse(d > 0, TRUE, FALSE))
         power = type.s.area + pt(CI[2]/d.SE, df, ncp, lower.tail = FALSE)
        type.s = type.s.area / power
       p.value = 2*pt(abs(obs.d)/d.SE, df, lower.tail = FALSE)
