@@ -28,7 +28,7 @@ exaggration = if(d > 0) mean(abs(random.d)[sig])/ d else mean(-abs(random.d)[sig
         type.s = numeric(n)
    exaggration = numeric(n)
   
-  for (i in 1:n){
+  for (i in 1L:n){
              a = type.s.m(d = d_range[i], n1 = n1, n2 = n2, alpha = alpha)
       power[i] = a$power
      type.s[i] = a$type.s
