@@ -1,8 +1,3 @@
-
-###############################################
-## Draws functions type.s, exagration vs. power
-###############################################
-
 type.s.mfun = function(n1, n2 = NA, d.min = 0, d.max = 1.4, alpha = .05){
   
   type.s.m = function(n1, n2, d, alpha){
