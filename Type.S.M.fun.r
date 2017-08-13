@@ -22,7 +22,7 @@ exaggration = if(d > 0) mean(abs(random.d)[sig])/ d else mean(-abs(random.d)[sig
   
   par(mfrow = c(2, 1), mgp = c(2, .5, 0), mar = c(4, 4, 3, 2), las = 1)  
   
-       d_range = seq(d.min, d.max, by = .005)
+       d_range = seq(d.min, d.max, by = 5e-3)
              n = length(d_range)
          power = numeric(n)
         type.s = numeric(n)
