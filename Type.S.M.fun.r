@@ -10,7 +10,7 @@ type.s.mfun = function(n1, n2 = NA, d.min = 0, d.max = 1.4, alpha = .05){
 type.s.area = pt(ifelse(d > 0, CI[1]/d.SE, CI[2]/d.SE), df, ncp, lower.tail = ifelse(d > 0, TRUE, FALSE))
       power = type.s.area + pt(ifelse(d > 0, CI[2]/d.SE, CI[1]/d.SE), df, ncp, lower.tail = ifelse(d > 0, FALSE, TRUE))
      type.s = type.s.area / power
-   random.d = rt(n = 1e4, df, ncp)*d.SE
+   random.d = rt(1e4, df, ncp)*d.SE
         sig = if(d > 0) abs(random.d) > CI[2] else -abs(random.d) < CI[1]
 exaggration = if(d > 0) mean(abs(random.d)[sig])/ d else mean(-abs(random.d)[sig])/ d
     
